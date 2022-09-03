@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Persona(dni, nombre){
+            var _this = this
+            var edad = 0
+            var edadParaSaludar = 1
+            this.dni = dni
+            this.nombre = nombre
+
+            // Metodos que acceden a las propiedades o metodos privados aqui
+            function envejecer (){
+                edad++
+                if (edad >= edadParaSaludar) {
+                    _this.saludar('') 
+                }
+            }
+
+            Persona.prototype.crecer = function(){
+            envejecer()
+        }
+        }
+
+        Persona.prototype.saludar = function(nombre){
+            console.log(`${this.nombre} te saluda ${nombre}`)
+        }
+
+        
+
+        var yo = new Persona(1, 'Santi')
+        console.log(yo.edad)
+
+        yo.saludar('Ingrid')
+        yo.crecer()
+    </script>
+</body>
+</html>

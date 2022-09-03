@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Persona (dni, nombre){
+            this.dni = dni
+            this.nombre = nombre
+        }
+
+        Persona.prototype.saludar = function(){
+            console.log(`Hola me llamo ${this.nombre}`)
+        }
+
+        function Estudiante (dni, nombre, numeroMatricula){
+            Persona.prototype.constructor.call(this, dni, nombre)
+            this.numeroMatricula = numeroMatricula
+        }
+
+        Estudiante.prototype = new Persona()
+        Estudiante.prototype.constructor = Estudiante;
+
+        Estudiante.prototype.estudiar = function(){
+            console.log('estudiante.....')
+        }
+
+        var yo = new Estudiante(1, 'Miguel', 12)
+        yo.saludar()
+        yo.estudiar
+
+        console.log(yo.constructor)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ejemplo de propieddd estatica en una clase predefinida
+    
+        console.log(Math.PI)
+    
+        function Convertidor(){
+    
+        }
+        
+        Convertidor.GRADOS_A_RADIANES = Math.PI/180
+        Convertidor.RADIANES_A_GRADOS = 180/Math.PI
+    
+        Convertidor.aRadines = function(grados){
+            return grados * Convertidor.GRADOS_A_RADIANES
+        }
+
+        Convertidor.aGrados = function(radianes){
+            return radianes * Convertidor.RADIANES_A_GRADOS
+        }
+
+        console.log(`180 grados son: ${180*Convertidor.GRADOS_A_RADIANES} radianes`)
+        console.log(`2PI radianes son: ${2*Math.PI*Convertidor.RADIANES_A_GRADOS} grados`)
+    </script>
+</body>
+</html>

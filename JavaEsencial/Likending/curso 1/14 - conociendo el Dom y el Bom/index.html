@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">Lorem ipsum</h1>
+    <button id="boton">¡Pulsame!</button>
+    <div id="container">
+        <p class="principal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sequi quibusdam deleniti eos. Alias itaque illum numquam ea porro necessitatibus laudantium minima quidem harum fugit! Laborum fugiat eaque veniam nemo?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste accusantium eligendi esse pariatur itaque tenetur, qui expedita non, minima porro reiciendis placeat maxime obcaecati, iusto officia nulla ullam laborum eius.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab inventore delectus possimus reiciendis rerum assumenda dignissimos saepe totam hic. Quod velit enim cupiditate eius, adipisci cum magni perferendis aspernatur porro!
+        </p>
+    </div>
+
+    <script>
+        //***********************
+        //*** Entendiendo el Dom y El BOM
+        var boton = document.getElementById("boton")
+        // boton.addEventListener('click', function(){
+        //     console.log(window.location.href)
+        //     window.location.href = "http://github.com/yacafx"
+        // })
+
+        //***********************
+        //*** Propiedades y metodos del DOM
+        // var todosLosParrafos = document.getElementsByTagName('p')
+        // var parrafoPorClase = document.getElementsByClassName("principal")[0].textContent
+        // var foto = document.createElement('img')
+        // foto.src = "descarga.jpg"
+        // foto.name = "foto1"
+        // foto.width = 400
+        // document.body.appendChild(foto)
+
+        // boton.addEventListener('click', function(){
+        //     boton.style.backgroundColor='green'
+        //     boton.style.color="white"
+        //     boton.style.width="200px"
+        // })
+
+        //***********************
+        //*** Propiedades y metodos del  BOM
+
+        var principal = document.getElementsByClassName('principal')[0]
+        console.log('innerHeight: ', innerHeight)
+        console.log('innerWidth: ', innerWidth)
+
+        localStorage.setItem('contenido', 'codigo y cafe es una gran conbinacion')
+
+        
+
+        boton.addEventListener('click', function(){
+            var contenido = localStorage.getItem('contenido')
+            principal.innerHTML= contenido
+
+            window.history.forward()
+            window.history.back()
+            window.history.go(3)
+        })
+    </script>
+</body>
+</html>
